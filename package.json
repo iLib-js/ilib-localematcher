@@ -9,6 +9,9 @@
             "require": "./lib/LocaleMatcher.js"
         }
     },
+    "engines": {
+        "node": ">=14.0.0 <23.0.0"
+    },
     "description": "A locale matcher to resolve partial locales or find fallback locales. iLib is a cross-engine library of internationalization (i18n) classes written in pure JS",
     "keywords": [
         "internationalization",
