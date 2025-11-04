@@ -11,7 +11,7 @@ jobs:
       - image: << parameters.docker_image >>
     steps:
       - checkout
-      - browser-tools/install-browser-tools
+      - browser-tools/install_browser_tools
       - run:
           name: Setup
           command: |
