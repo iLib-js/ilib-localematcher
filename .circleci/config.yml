@@ -1,27 +1,7 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.6
+  browser-tools: circleci/browser-tools@2.3.2
 jobs:
-  testold:
-    parameters:
-        docker_image:
-          type: string
-          default: cimg/node:current-browsers
-    docker:
-      - image: << parameters.docker_image >>
-    steps:
-      - checkout
-      - run:
-          name: Setup
-          command: |
-            rm -rf node_modules package-lock.json
-            npm install
-      - run:
-          name: Running all unit tests
-          command: |
-            node -v
-            npm -v
-            CHROME_BIN=/usr/bin/google-chrome npm run test
   test:
     parameters:
         docker_image:
@@ -31,7 +11,7 @@ jobs:
       - image: << parameters.docker_image >>
     steps:
       - checkout
-      - browser-tools/install-browser-tools
+      - browser-tools/install_browser_tools
       - run:
           name: Setup
           command: |
@@ -49,9 +29,7 @@ workflows:
   test-all-node-versions:
     jobs:
       - test:
-          docker_image: circleci/node:10-browsers
-      - testold:
-          docker_image: circleci/node:12-browsers
+          docker_image: cimg/node:12.22-browsers
       - test:
           docker_image: cimg/node:14.21-browsers
       - test:
@@ -60,4 +38,5 @@ workflows:
           docker_image: cimg/node:18.9-browsers
       - test:
           docker_image: cimg/node:20.9-browsers
-      - test
+      - test:
+          docker_image: cimg/node:22.21.0-browsers
