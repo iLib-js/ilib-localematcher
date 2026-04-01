@@ -1,7 +1,7 @@
 /*
  * localematch.test.js - test the locale matcher object
  *
- * Copyright © 2012-2015, 2017,2019 2022-2023, 2025 JEDLSoft
+ * Copyright © 2012-2015, 2017,2019 2022-2023, 2025-2026 JEDLSoft
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1368,6 +1368,16 @@ describe("testLocaleMatch", () => {
         var locale = lm.getLikelyLocale();
         expect(typeof(locale) !== "undefined").toBeTruthy();
         expect(locale.getSpec()).toBe("ko-Kore-TW");
+    });
+    test("LocaleMatcherGetLikelyLocaleByLocaleCode_ko_CN", () => {
+        expect.assertions(3);
+        var lm = new LocaleMatcher({
+            locale: "ko-CN"
+        });
+        expect(typeof(lm) !== "undefined").toBeTruthy();
+        var locale = lm.getLikelyLocale();
+        expect(typeof(locale) !== "undefined").toBeTruthy();
+        expect(locale.getSpec()).toBe("ko-Kore-CN");
     });
     test("LocaleMatcherMatchExactFullLocale", () => {
         expect.assertions(2);

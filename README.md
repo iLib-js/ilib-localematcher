@@ -48,7 +48,7 @@ for specifics.
 
 ## License
 
-Copyright © 2021-2022, 2025 JEDLSoft
+Copyright © 2021-2022, 2025-2026 JEDLSoft
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ limitations under the License.
 
 ### v1.3.2
 * Add the missing `ko-TW` and `ko-US` locales to the LocaleMatcher.
+* Add the missing `ko-CN` locale to the LocaleMatcher.
 
 ### v1.3.1
 
