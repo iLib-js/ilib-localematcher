@@ -183,6 +183,40 @@ describe("testLocaleMatch", () => {
         expect(locale.getSpec()).toBe("arc-Elym-IR");
     });
 
+    test("LocaleMatcherGetLikelyLocaleByUndLanguageAndScriptArab", () => {
+        expect.assertions(3);
+        debugger;
+        var lm = new LocaleMatcher({
+            locale: "und-Arab"
+        });
+        expect(typeof(lm) !== "undefined").toBeTruthy();
+        var locale = lm.getLikelyLocale();
+        expect(typeof(locale) !== "undefined").toBeTruthy();
+        expect(locale.getSpec()).toBe("ar-Arab-EG");
+    });
+
+    test("LocaleMatcherGetLikelyLocaleByUndLanguageAndScriptHans", () => {
+        expect.assertions(3);
+        var lm = new LocaleMatcher({
+            locale: "und-Hans"
+        });
+        expect(typeof(lm) !== "undefined").toBeTruthy();
+        var locale = lm.getLikelyLocale();
+        expect(typeof(locale) !== "undefined").toBeTruthy();
+        expect(locale.getSpec()).toBe("zh-Hans-CN");
+    });
+
+    test("LocaleMatcherGetLikelyLocaleByUndLanguageAndScriptCyrl", () => {
+        expect.assertions(3);
+        var lm = new LocaleMatcher({
+            locale: "und-Cyrl"
+        });
+        expect(typeof(lm) !== "undefined").toBeTruthy();
+        var locale = lm.getLikelyLocale();
+        expect(typeof(locale) !== "undefined").toBeTruthy();
+        expect(locale.getSpec()).toBe("ru-Cyrl-RU");
+    });
+
     test("LocaleMatcherGetLikelyLocaleByLanguageAndScript1", () => {
         expect.assertions(3);
         var lm = new LocaleMatcher({
@@ -280,6 +314,28 @@ describe("testLocaleMatch", () => {
         var locale = lm.getLikelyLocale();
         expect(typeof(locale) !== "undefined").toBeTruthy();
         expect(locale.getSpec()).toBe("fr-Latn-MA");
+    });
+
+    test("LocaleMatcherGetLikelyLocaleByRegionAndScript2", () => {
+        expect.assertions(3);
+        var lm = new LocaleMatcher({
+            locale: "Arab-IN"
+        });
+        expect(typeof(lm) !== "undefined").toBeTruthy();
+        var locale = lm.getLikelyLocale();
+        expect(typeof(locale) !== "undefined").toBeTruthy();
+        expect(locale.getSpec()).toBe("ur-Arab-IN");
+    });
+
+    test("LocaleMatcherGetLikelyLocaleByRegionAndScript3", () => {
+        expect.assertions(3);
+        var lm = new LocaleMatcher({
+            locale: "Deva-PK"
+        });
+        expect(typeof(lm) !== "undefined").toBeTruthy();
+        var locale = lm.getLikelyLocale();
+        expect(typeof(locale) !== "undefined").toBeTruthy();
+        expect(locale.getSpec()).toBe("btv-Deva-PK");
     });
 
     test("LocaleMatcherGetLikelyLocaleAlreadySpecified", () => {

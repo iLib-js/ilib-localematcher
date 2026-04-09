@@ -65,6 +65,11 @@ limitations under the License.
 
 ## Release Notes
 
+### v1.3.3
+* Fix a bug where locale parsing information is passed incorrectly.
+    * The order of parameters for the Locale class in ilib-locale is language, region, variant, script.
+
+
 ### v1.3.2
 * Add the missing `ko-TW` and `ko-US` locales to the LocaleMatcher.
 * Add the missing `ko-CN` locale to the LocaleMatcher.
