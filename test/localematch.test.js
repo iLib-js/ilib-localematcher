@@ -185,7 +185,6 @@ describe("testLocaleMatch", () => {
 
     test("LocaleMatcherGetLikelyLocaleByUndLanguageAndScriptArab", () => {
         expect.assertions(3);
-        debugger;
         var lm = new LocaleMatcher({
             locale: "und-Arab"
         });
